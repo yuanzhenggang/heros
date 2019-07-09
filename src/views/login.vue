@@ -3,13 +3,47 @@
         <!-- 卡片 -->
         <el-card class="login-box">
             <img src="../assets/images/logo_index.png" alt="">
+
+            <!-- 表单 -->
+        <el-form>
+            <el-form-item >
+                <el-input placeholder="请输入手机号"></el-input>
+            </el-form-item>
+            <el-form-item>
+                <!-- 提交按钮 -->
+                <el-input placeholder="请输入验证码" style='width:280px'></el-input>
+                <el-button style='float:right'>发送验证码</el-button>
+            </el-form-item>
+            <el-form-item>
+                <el-checkbox v-model='checked'></el-checkbox>
+                我已阅读并同意<el-link :underline="false" type="primary" >用户协议</el-link>
+                和<el-link :underline="false" type="primary">隐私条款</el-link>
+            </el-form-item>
+            <el-form-item>
+                <el-button style="width:100%" type="primary">登录</el-button>
+            </el-form-item>
+        </el-form>
         </el-card>
+        
     </div>
 </template>
 
 <script>
 export default {
- 
+    data() {
+        return {
+            form: {
+                name:'',
+            },
+            checked:true
+
+        }
+    },
+    methods: {
+        onSubmit() {
+            console.log('submit!')
+        }
+    }
 }
 </script>
 
@@ -37,4 +71,5 @@ export default {
     }
    
 }
+
 </style>
